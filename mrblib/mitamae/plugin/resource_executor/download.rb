@@ -42,6 +42,7 @@ module ::MItamae
         def set_desired_attributes(desired, action)
           case action
           when :fetch
+            desired.exists = true
             desired.mode = validated_mode(attributes.mode) if attributes.mode
             desired.owner = attributes.owner if attributes.owner
             desired.group = attributes.group if attributes.group
